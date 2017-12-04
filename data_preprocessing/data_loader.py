@@ -25,7 +25,7 @@ class Bbox():
 
         intersection_width = max(box1_xmax - box2_xmin, 0)
         intersection_width = min(intersection_width, box1.width, box2.width)
-        print "intersection_width", intersection_width
+        # print "intersection_width", intersection_width
 
         if box1.yc > box2.yc:
             box1, box2 = box2, box1
@@ -35,13 +35,13 @@ class Bbox():
 
         intersection_height = max(box1_ymax - box2_ymin, 0)
         intersection_height = min(intersection_height, box1.height, box2.height)
-        print "intersection_height", intersection_height
+        # print "intersection_height", intersection_height
 
         intersection_area = intersection_width*intersection_height
-        print intersection_area
+        # print intersection_area
         # union_area = box1.area + box2.area - intersection_area
         union_area = (box1.width*box1.height) + (box2.width*box2.height) - intersection_area
-        print union_area
+        # print union_area
         # print intersection_area/float(union_area)
         return intersection_area/union_area
 
@@ -64,10 +64,10 @@ def read_labels_from_xml(xml_file):
     labels = []
     for object in objects:
         type = object.find('name').text
-        xmin = int(object.find('bndbox/xmin').text)*IMG_SIZE/img_width  # scale to image size
-        ymin = int(object.find('bndbox/ymin').text)*IMG_SIZE/img_height
-        xmax = int(object.find('bndbox/xmax').text)*IMG_SIZE/img_width
-        ymax = int(object.find('bndbox/ymax').text)*IMG_SIZE/img_height
+        xmin = float(object.find('bndbox/xmin').text)*IMG_SIZE/img_width  # scale to image size
+        ymin = float(object.find('bndbox/ymin').text)*IMG_SIZE/img_height
+        xmax = float(object.find('bndbox/xmax').text)*IMG_SIZE/img_width
+        ymax = float(object.find('bndbox/ymax').text)*IMG_SIZE/img_height
         label = Bbox(image_id, type, (xmin+xmax)/2.0, (ymin+ymax)/2.0, xmax-xmin, ymax-ymin)
 
         labels.append(label)

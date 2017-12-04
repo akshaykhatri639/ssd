@@ -30,7 +30,7 @@ class GTBuilder():
 
                 # for all boxes of this size centred at box_center
                 for k, ar in enumerate(self.aspect_ratios):
-g
+
                     # Box centre along with this width and height forms one default box
                     width = scale*math.sqrt(ar)*IMG_SIZE
                     height = scale/math.sqrt(ar)*IMG_SIZE
@@ -106,7 +106,7 @@ if __name__ == "__main__":
 
     label_dir = '../data/VOCdevkit/VOC2012/Annotations/'
     label_files = listdir(label_dir)
-    label_file = '../data/VOCdevkit/VOC2012/Annotations/2007_000027.xml'
+    label_file = '../data/VOCdevkit/VOC2012/Annotations/2011_006135.xml'
 
     gt_builder = GTBuilder(feature_sizes, aspect_ratios, num_scales, class_to_index)
     gt_maps = gt_builder.build_gt(label_file)
@@ -119,8 +119,9 @@ if __name__ == "__main__":
     # image_file = '../data/VOCdevkit/VOC2012/JPEGImages/2007_000027.jpg'
     # img = Image.open(image_file)
 
-    save_dir = '../data/VOCdevkit/VOC2012/Preprocessed/2007_000027'
+    save_dir = '../data/VOCdevkit/VOC2012/Preprocessed/2011_006135'
     np.savez(save_dir, **{str(key): value for (key, value) in zip(feature_sizes, gt_maps)})
+    # print "I ran"
 
 
 
