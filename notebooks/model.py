@@ -74,7 +74,7 @@ print out2.shape
 # In[7]:
 
 
-k = 20 # set randomly for now
+# k = 20 # set randomly for now
 
 
 # In[12]:
@@ -84,8 +84,8 @@ ssd_model = Model(inputs=model.input, outputs = [out1, out2])
 acc_fun = wrapped_partial(accuracy, num_aspect_ratios=num_aspect_ratios, num_classes=num_classes)
 recall_fun = wrapped_partial(recall, num_aspect_ratios=num_aspect_ratios, num_classes=num_classes)
 
-loss_fun_28 = wrapped_partial(loss_with_negative_mining, k=13, num_aspect_ratios=num_aspect_ratios, num_classes=num_classes)
-loss_fun_14 = wrapped_partial(loss_with_negative_mining, k=40, num_aspect_ratios=num_aspect_ratios, num_classes=num_classes)
+loss_fun_28 = wrapped_partial(loss_with_negative_mining, k=12, num_aspect_ratios=num_aspect_ratios, num_classes=num_classes)
+loss_fun_14 = wrapped_partial(loss_with_negative_mining, k=45, num_aspect_ratios=num_aspect_ratios, num_classes=num_classes)
 
 optim = optimizers.Adam()
 
@@ -122,8 +122,9 @@ ssd_model.fit_generator(generator=data_gen.generate(),steps_per_epoch=1000, epoc
 
 # In[ ]:
 
-
-ssd_model.save("VGG_basic_1")
+save_path = "saved_models/VGG_basic_3"
+print "Saving model to:", save_path
+ssd_model.save(save_path)
 
 
 # In[ ]:

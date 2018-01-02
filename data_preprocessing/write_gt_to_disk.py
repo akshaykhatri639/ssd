@@ -8,7 +8,7 @@ classes = ["background", "person", "bird", "cat", "cow", "dog", "horse", "sheep"
 num_classes = len(classes)
 class_to_index = {key: value for (key, value) in zip(classes, range(num_classes))}
 
-feature_sizes = [26, 12, 5]
+feature_sizes = [28, 14]
 num_scales = len(feature_sizes)
 aspect_ratios = [1, 2, 3, 1 / 2.0, 1 / 3.0]
 

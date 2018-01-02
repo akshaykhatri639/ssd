@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8850e6fb-d43a-416e-a73b-0b8a49815870" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/notebooks/.ipynb_checkpoints/gt_sanity_check-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/notebooks/gt_sanity_check.ipynb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_preprocessing/data_loader.py" afterPath="$PROJECT_DIR$/data_preprocessing/data_loader.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_preprocessing/ground_truth.py" afterPath="$PROJECT_DIR$/data_preprocessing/ground_truth.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notebooks/model.ipynb" afterPath="$PROJECT_DIR$/notebooks/model.ipynb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -595,7 +591,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="false" />
           </folding>
         </state>
       </provider>
